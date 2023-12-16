@@ -1,0 +1,811 @@
+[
+    {
+        "id": "e76bfd45c02f0f14",
+        "type": "tab",
+        "label": "opcua",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b49aba26dcb65025",
+        "type": "tab",
+        "label": "mqtt",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2a32b5348ea3a930",
+        "type": "tab",
+        "label": "cnc",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2fe158e8d718b436",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://opcua.demo-this.com:51210/UA/SampleServer",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "3ba4ece097c8bf0a",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "abfb13b25f7cace3",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "080a9f369594afc5",
+        "type": "ui_group",
+        "name": "opcua and mqtt",
+        "tab": "3ba4ece097c8bf0a",
+        "order": 1,
+        "disp": true,
+        "width": "29",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a1aec7eaf5bb8e25",
+        "type": "mqtt-broker",
+        "name": "test",
+        "broker": "82.146.60.95",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b9b601952637100c",
+        "type": "ui_tab",
+        "name": "home2",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "4aea2e8dcf607594",
+        "type": "ui_group",
+        "name": "cnc",
+        "tab": "b9b601952637100c",
+        "order": 2,
+        "disp": true,
+        "width": 7,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1117a22e063af583",
+        "type": "ui_spacer",
+        "z": "2a32b5348ea3a930",
+        "name": "spacer",
+        "group": "080a9f369594afc5",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "507cf8b32d6a469a",
+        "type": "ui_spacer",
+        "z": "2a32b5348ea3a930",
+        "name": "spacer",
+        "group": "080a9f369594afc5",
+        "order": 4,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "0420d8eac84672fe",
+        "type": "ui_spacer",
+        "z": "2a32b5348ea3a930",
+        "name": "spacer",
+        "group": "080a9f369594afc5",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4267b55f367046cb",
+        "type": "ui_spacer",
+        "z": "2a32b5348ea3a930",
+        "name": "spacer",
+        "group": "080a9f369594afc5",
+        "order": 7,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "842560fef92cc707",
+        "type": "ui_spacer",
+        "z": "2a32b5348ea3a930",
+        "name": "spacer",
+        "group": "080a9f369594afc5",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "203af2f3a584b78b",
+        "type": "ui_spacer",
+        "z": "2a32b5348ea3a930",
+        "name": "spacer",
+        "group": "080a9f369594afc5",
+        "order": 9,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "bb01ef0b858c4768",
+        "type": "ui_spacer",
+        "z": "2a32b5348ea3a930",
+        "name": "spacer",
+        "group": "080a9f369594afc5",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c4d63336548bf36f",
+        "type": "ui_spacer",
+        "z": "2a32b5348ea3a930",
+        "name": "spacer",
+        "group": "080a9f369594afc5",
+        "order": 11,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "b92d9ee0f40de416",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "prdct_clct",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "42f5b455a7dbd159",
+        "type": "inject",
+        "z": "e76bfd45c02f0f14",
+        "name": "posX",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "posX",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 240,
+        "wires": [
+            [
+                "5968c6cb9ff58379",
+                "f0761ffa464674ac",
+                "f06d4932d5c80bf0"
+            ]
+        ]
+    },
+    {
+        "id": "5968c6cb9ff58379",
+        "type": "OpcUa-Item",
+        "z": "e76bfd45c02f0f14",
+        "item": "ns=2;i=11182",
+        "datatype": "Int16",
+        "value": "",
+        "name": "",
+        "x": 480,
+        "y": 140,
+        "wires": [
+            [
+                "e41b3db78871884e"
+            ]
+        ]
+    },
+    {
+        "id": "e41b3db78871884e",
+        "type": "OpcUa-Client",
+        "z": "e76bfd45c02f0f14",
+        "endpoint": "2fe158e8d718b436",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 680,
+        "y": 140,
+        "wires": [
+            [
+                "6d3696127965bbb6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f0761ffa464674ac",
+        "type": "OpcUa-Item",
+        "z": "e76bfd45c02f0f14",
+        "item": "ns=2;i=11194",
+        "datatype": "Int32",
+        "value": "",
+        "name": "",
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "463e6711c3d1ac76"
+            ]
+        ]
+    },
+    {
+        "id": "6d3696127965bbb6",
+        "type": "ui_chart",
+        "z": "e76bfd45c02f0f14",
+        "name": "",
+        "group": "080a9f369594afc5",
+        "order": 12,
+        "width": 29,
+        "height": 4,
+        "label": "opcDemo 32-bit and 16-bit",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff0019",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#fa0000",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 845,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "463e6711c3d1ac76",
+        "type": "OpcUa-Client",
+        "z": "e76bfd45c02f0f14",
+        "endpoint": "2fe158e8d718b436",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "6d3696127965bbb6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f06d4932d5c80bf0",
+        "type": "OpcUa-Item",
+        "z": "e76bfd45c02f0f14",
+        "item": "ns=2;i=10939",
+        "datatype": "String Array",
+        "value": "",
+        "name": "",
+        "x": 480,
+        "y": 340,
+        "wires": [
+            [
+                "c71834e0a9bda191"
+            ]
+        ]
+    },
+    {
+        "id": "c71834e0a9bda191",
+        "type": "OpcUa-Client",
+        "z": "e76bfd45c02f0f14",
+        "endpoint": "2fe158e8d718b436",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": "8191",
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 680,
+        "y": 340,
+        "wires": [
+            [
+                "6faaee08709ebaca"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6faaee08709ebaca",
+        "type": "ui_text",
+        "z": "e76bfd45c02f0f14",
+        "group": "080a9f369594afc5",
+        "order": 3,
+        "width": 14,
+        "height": 4,
+        "name": "",
+        "label": "String",
+        "format": "{{msg.payload[0]}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 870,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "aad4316387c80ae5",
+        "type": "mqtt in",
+        "z": "b49aba26dcb65025",
+        "name": "",
+        "topic": "sensor/temp",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "a1aec7eaf5bb8e25",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "16c5bd61a352369a"
+            ]
+        ]
+    },
+    {
+        "id": "54e9a10a5662fc8e",
+        "type": "mqtt in",
+        "z": "b49aba26dcb65025",
+        "name": "",
+        "topic": "sensor/hump",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "a1aec7eaf5bb8e25",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 200,
+        "wires": [
+            [
+                "fb7812077c56db9e"
+            ]
+        ]
+    },
+    {
+        "id": "fb7812077c56db9e",
+        "type": "ui_gauge",
+        "z": "b49aba26dcb65025",
+        "name": "",
+        "group": "080a9f369594afc5",
+        "order": 5,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "humidity",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "90",
+        "diff": false,
+        "className": "",
+        "x": 320,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "16c5bd61a352369a",
+        "type": "ui_gauge",
+        "z": "b49aba26dcb65025",
+        "name": "",
+        "group": "080a9f369594afc5",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "temperature",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#009eb3",
+            "#c3e228",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 330,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "6168622108c26db6",
+        "type": "inject",
+        "z": "2a32b5348ea3a930",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 280,
+        "wires": [
+            [
+                "4dd981976f723050"
+            ]
+        ]
+    },
+    {
+        "id": "4dd981976f723050",
+        "type": "http request",
+        "z": "2a32b5348ea3a930",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://cnc.kovalev.team/get/5",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 310,
+        "y": 280,
+        "wires": [
+            [
+                "ab087bfe8fc3dedc"
+            ]
+        ]
+    },
+    {
+        "id": "41851b33c61011df",
+        "type": "function",
+        "z": "2a32b5348ea3a930",
+        "name": "function 1",
+        "func": "var m = JSON.stringify(msg.payload)\nvar p = JSON.parse(m);\nmsg.payload.work_kernel=p.data[0][1][1];\nmsg.payload.stat=p.data[1][1][2];\nmsg.payload.work_channel=p.data[1][1][0];\nmsg.payload.work_progr = p.data[1][1][4];\nmsg.payload.mode = p.data[1][1][3];\nmsg.payload.percent = p.data[1][1][5];\nmsg.payload.progr = p.data[1][1][6];\nmsg.payload.x = p.data[2][1][0];\nmsg.payload.y = p.data[2][1][1];\nmsg.payload.z = p.data[2][1][2];\nmsg.payload.b = p.data[2][1][3];\nmsg.payload.c = p.data[2][1][4];\nmsg.payload.s = p.data[2][1][5];\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 280,
+        "wires": [
+            [
+                "c2c576799dbdf6b1",
+                "8f7acf1cb48ae47d"
+            ]
+        ]
+    },
+    {
+        "id": "c2c576799dbdf6b1",
+        "type": "ui_text",
+        "z": "2a32b5348ea3a930",
+        "group": "4aea2e8dcf607594",
+        "order": 1,
+        "width": 7,
+        "height": 3,
+        "name": "",
+        "label": "{{msg.payload.work_channel[0]}}:<br>{{msg.payload.work_kernel[0]}}:<br>{{msg.payload.stat[0]}}:<br>{{msg.payload.x[0]}}:<br>{{msg.payload.y[0]}}:",
+        "format": "{{msg.payload.work_channel[1]}}<br>{{msg.payload.work_kernel[1]}}<br>{{msg.payload.stat[1]}}<br>{{msg.payload.x[1]}}<br>{{msg.payload.y[1]}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 810,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "097c1e302113baa2",
+        "type": "debug",
+        "z": "2a32b5348ea3a930",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "ab087bfe8fc3dedc",
+        "type": "json",
+        "z": "2a32b5348ea3a930",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 470,
+        "y": 280,
+        "wires": [
+            [
+                "41851b33c61011df"
+            ]
+        ]
+    },
+    {
+        "id": "8f7acf1cb48ae47d",
+        "type": "function",
+        "z": "2a32b5348ea3a930",
+        "name": "function 2",
+        "func": "msg.topic = \"INSERT INTO machine_info(work_kernel, channel_status, work_channel, work_time, channel_mode, percentage, programm, axis_x, axis_y,axis_z,axis_b,axis_c,axis_s) VALUES('\" \n+ msg.payload.work_kernel[1] + \"', '\" \n+ msg.payload.stat[1] + \"', '\"\n+ msg.payload.work_channel[1] + \"', '\"\n+ msg.payload.work_progr[1] + \"', '\"\n+ msg.payload.mode[1] + \"', '\"\n+ msg.payload.percent[1] + \"', '\"\n+ msg.payload.progr[1] + \"', '\"\n+ msg.payload.x[1] + \"', '\"\n+ msg.payload.y[1] + \"', '\"\n+ msg.payload.z[1] + \"', '\"\n+ msg.payload.b[1] + \"', '\"\n+ msg.payload.c[1] + \"', '\"\n+ msg.payload.s[1] + \"');\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 220,
+        "wires": [
+            [
+                "416ad78a7e553bad",
+                "097c1e302113baa2"
+            ]
+        ]
+    },
+    {
+        "id": "416ad78a7e553bad",
+        "type": "rbe",
+        "z": "2a32b5348ea3a930",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 970,
+        "y": 220,
+        "wires": [
+            [
+                "62ccf9143576e51a"
+            ]
+        ]
+    },
+    {
+        "id": "62ccf9143576e51a",
+        "type": "mysql",
+        "z": "2a32b5348ea3a930",
+        "mydb": "b92d9ee0f40de416",
+        "name": "db",
+        "x": 1130,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    }
+]
